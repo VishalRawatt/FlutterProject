@@ -75,13 +75,11 @@ class _State extends State<LoginForm> {
                     onPressed: () {
                       if (_formKey.currentState?.validate() == true) {
                         _provider.doLogin() ;
-                        print("vla") ;
                       }
                     },
                     child: Text(
                       "Login",
                       style: TextStyle(color: Colors.white),
-
                     ),
                     style: ButtonStyle(
                         backgroundColor:

@@ -22,7 +22,7 @@ class LoginProvider extends ChangeNotifier{
     final user_password = _password.text.toString() ;
 
     final loginRequest = LoginRequest(
-      username: user_name , password: user_password , expiresInMins: 60);
+      username: user_name , password: user_password , expiresInMins: 30);
 
     final response = await http.post(
         Uri.parse("https://dummyjson.com/auth/login"),
