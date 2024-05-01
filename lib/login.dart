@@ -26,11 +26,12 @@ class _State extends State<LoginForm> {
     _provider = Provider.of(context, listen: true);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login Form"),
+        title: Text('Login Form'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Form(
+          key: _formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -73,12 +74,14 @@ class _State extends State<LoginForm> {
                       child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState?.validate() == true) {
-                        //Hit API
+                        _provider.doLogin() ;
+                        print("vla") ;
                       }
                     },
                     child: Text(
                       "Login",
                       style: TextStyle(color: Colors.white),
+
                     ),
                     style: ButtonStyle(
                         backgroundColor:
